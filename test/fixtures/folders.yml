@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  path: MyString
+  base_name: MyString
+  parent_folder_id: 1
+
+two:
+  path: MyString
+  base_name: MyString
+  parent_folder_id: 1

@@ -1,0 +1,11 @@
+// Place all the styles related to the MenuItems controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.grid {
+  --min: 256px;
+  --gap: 32px;
+
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+}

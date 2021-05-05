@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Developer portal</h1>
+
+<div class="grid">
+
+  <nav>
+    <ul>
+      <% @menu_items.sort_by { |m| m.order }.each do |menu_item| %>
+        <li><%= menu_item.icon if menu_item.present? %> <%= link_to menu_item.name, page_path(menu_item.page) %></td>
+          <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>
+          <td><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+
+  <section>
+    <table>
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Path</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @pages.each do |page| %>
+        <tr>
+          <td><%= page.title %></td>
+          <td><%= page.path %></td>
+          <td><%= link_to 'Show', page %></td>
+          <td><%= link_to 'Edit', edit_page_path(page) %></td>
+          <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<%= link_to 'New Menu Item', new_menu_item_path %>
